@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+const SPEED := 300
+
+var input_vector = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+	input_vector.x = Input.get_action_strength("move_Right") - Input.get_action_strength("move_Lift")
+	
+	global_position += input_vector * SPEED * delta

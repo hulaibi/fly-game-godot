@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://7dqsh731aoa8"]
+[gd_scene load_steps=4 format=3 uid="uid://7dqsh731aoa8"]
 
 [ext_resource type="PackedScene" uid="uid://c5yjttyjp4q2s" path="res://Player/character_body_2d.tscn" id="1_etqes"]
+[ext_resource type="PackedScene" uid="uid://b0rybachxhfp0" path="res://Stages/boundaries.tscn" id="2_hs1s2"]
+[ext_resource type="PackedScene" uid="uid://bupusc0dqr6i1" path="res://seen/enemy_spawner.tscn" id="3_8y8vk"]
 
 [node name="stage1" type="Node2D"]
 
@@ -8,6 +10,16 @@
 position = Vector2(0, -8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -70)
+position = Vector2(1, -108)
 zoom = Vector2(4, 4)
 limit_smoothed = true
+
+[node name="Boundaries" parent="." instance=ExtResource("2_hs1s2")]
+position = Vector2(-78, -65)
+
+[node name="Boundaries2" parent="." instance=ExtResource("2_hs1s2")]
+position = Vector2(83, -66)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_8y8vk")]
+position = Vector2(0.999992, -236)
+scale = Vector2(0.7, 0.7)
