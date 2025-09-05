@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5yjttyjp4q2s"]
+
+[ext_resource type="Texture2D" uid="uid://bsgp4lkdun20m" path="res://airplan/FX88.png" id="1_v8jqv"]
+[ext_resource type="Script" uid="uid://61b331indjwt" path="res://Script/character_body_2d.gd" id="1_vvw5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvw5e"]
+atlas = ExtResource("1_v8jqv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inwu4"]
+atlas = ExtResource("1_v8jqv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srlcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvw5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inwu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nfgwh"]
+radius = 5.0
+height = 16.0
+
+[node name="FX88" type="CharacterBody2D"]
+script = ExtResource("1_vvw5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_srlcf")
+autoplay = "default"
+frame_progress = 0.391441
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nfgwh")
