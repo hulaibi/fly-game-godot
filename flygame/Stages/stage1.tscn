@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://7dqsh731aoa8"]
 
-[ext_resource type="PackedScene" uid="uid://c5yjttyjp4q2s" path="res://Player/character_body_2d.tscn" id="1_etqes"]
+[ext_resource type="PackedScene" uid="uid://c5yjttyjp4q2s" path="res://Player/player.tscn" id="1_etqes"]
 [ext_resource type="PackedScene" uid="uid://b0rybachxhfp0" path="res://Stages/boundaries.tscn" id="2_hs1s2"]
 [ext_resource type="PackedScene" uid="uid://bupusc0dqr6i1" path="res://seen/enemy_spawner.tscn" id="3_8y8vk"]
 
 [node name="stage1" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_etqes")]
+[node name="player" parent="." instance=ExtResource("1_etqes")]
 position = Vector2(0, -8)
 
 [node name="Camera2D" type="Camera2D" parent="."]

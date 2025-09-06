@@ -1,7 +1,7 @@
 extends Node2D
 
 var spon_pos = null
-var Enemy = preload("res://Player/enemy.tscn")
+var enemy_instance = preload("res://Player/enemy.tscn")
 
 
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func spawn_enemy():
 	var index = randi() % spon_pos.size()
-	var enemy = Enemy.instantiate()
+	var enemy = enemy_instance.instantiate()
 	enemy.global_position = spon_pos[index].global_position
 	add_child(enemy)
 
